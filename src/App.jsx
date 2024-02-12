@@ -67,11 +67,11 @@ function App() {
   return (
     <>
     <div className="m-5 justify-content-center align-items-center">
-<div className='border border-black rounded'>
-    <h1 className='text-center'> Aunty Fried Chicken</h1>
+<main className='border border-black rounded'>
+    <h1 className='text-center p-3'> Aunty Fried Chicken</h1>
     <Category title={"Fried Chicken"} foods={friedChicken} />
     <Category title={"Desserts"} foods={desserts} />
-    </div>
+    </main>
     </div>
     </>
   );

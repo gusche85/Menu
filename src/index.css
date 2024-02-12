@@ -3,4 +3,17 @@ body {
     background-size: cover;  
     background-attachment: fixed;  
     background-position: center;  
+    
   }
+
+  main {
+    margin: 10px auto;
+    position: relative;
+    padding: 2em;
+    background: white;
+    -webkit-box-shadow: 0 0px 100px rgba(0, 0, 0, 0.9);
+    width: 80%;
+    max-width: 65em;
+    font-size: 14px;
+  }
+  
