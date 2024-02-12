@@ -20,6 +20,20 @@ body {
 
   img {
     height: 70px;
-    
+  }
+
+  .allergen {
+    height: 20px;
+  }
+
+  .fst-italic {
+    font-size: 10px;
   }
   
+  .card {
+    max-width: 540px;
+  }
+
+  #menuImage {
+    height: 250px;
+  }
