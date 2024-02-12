@@ -1,3 +1,7 @@
+import './index.css'
+import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+
 function NutritionalInfo({nutritionInfo}) {
   return (
     <div>
@@ -62,10 +66,13 @@ const desserts = (
 function App() {
   return (
     <>
-    <h1> Uncle Haris Fried Chicken</h1>
+    <div className="m-5 justify-content-center align-items-center">
+<div className='border border-black rounded'>
+    <h1 className='text-center'> Aunty Fried Chicken</h1>
     <Category title={"Fried Chicken"} foods={friedChicken} />
     <Category title={"Desserts"} foods={desserts} />
-    
+    </div>
+    </div>
     </>
   );
 }

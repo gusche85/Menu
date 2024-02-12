@@ -1,0 +1,6 @@
+body {  
+    background: url('/public/background.jpg');
+    background-size: cover;  
+    background-attachment: fixed;  
+    background-position: center;  
+  }
