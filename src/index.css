@@ -11,8 +11,8 @@ body {
     position: relative;
     padding: 2em;
    color: white;
-    background: hsla(0, 0%, 0%, 0.783);
-    backdrop-filter: blur(1rem);
+   background: hsla(0, 0%, 0%, 0.783);
+   
     width: 80%;
     max-width: 65em;
     font-size: 14px;
@@ -32,6 +32,9 @@ body {
   
   .card {
     max-width: 540px;
+    color: white;
+    background: hsla(0, 0%, 0%, 0.783);
+    backdrop-filter: blur(1rem);
   }
 
   #menuImage {

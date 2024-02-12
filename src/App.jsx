@@ -38,7 +38,7 @@ function Image({image}) {
 function MenuItem({image, name, price, ingredients, allergen, nutritionInfo}) {
   return (
     
-     <div className='card mb-3'>
+     <div className='card mb-3 border-dark bg-transparent text-light'>
       <div className='row g-0'>
         <div className='col-md-4'><Image image={image}/></div>
         <div className='col-md-8'>
