@@ -1,5 +1,5 @@
 body {  
-    background: url('/public/background.jpg');
+    background-image: url('/background.jpg');
     background-size: cover;  
     background-attachment: fixed;  
     background-position: center;  
@@ -10,10 +10,16 @@ body {
     margin: 10px auto;
     position: relative;
     padding: 2em;
-    background: white;
-    -webkit-box-shadow: 0 0px 100px rgba(0, 0, 0, 0.9);
+   color: white;
+    background: hsla(0, 0%, 0%, 0.783);
+    backdrop-filter: blur(1rem);
     width: 80%;
     max-width: 65em;
     font-size: 14px;
+  }
+
+  img {
+    height: 70px;
+    
   }
   
