@@ -39,7 +39,7 @@ function Image({image}) {
   );
 }
 
-function MenuItem({image, name, price, ingredients, allergen, nutritionInfo}) {
+function MenuItem({image, name, price, ingredients, allergen, foodcode, nutritionInfo}) {
   return (
     
 
@@ -48,7 +48,8 @@ function MenuItem({image, name, price, ingredients, allergen, nutritionInfo}) {
         <div className='col-md-4'><Image image={image}/></div>
         <div className='col-md-8'>
           <div className='card-body'>
-            <h5 className='card-title pt-2'><strong>{name}</strong> | {price}</h5>
+            <h5 className='card-title pt-1'><strong>{name}</strong> | {price}</h5>
+            <Code foodcode={foodcode} />
             <Ingredients ingredients={ingredients} />         
             <NutritionalInfo nutritionInfo={nutritionInfo} />
             <Allergen allergen={allergen} />
@@ -60,6 +61,11 @@ function MenuItem({image, name, price, ingredients, allergen, nutritionInfo}) {
   );
 }
 
+function Code({foodcode}) {
+  return (
+    <div className='text-warning'>Code: {foodcode}</div>
+  )
+}
 function Category({ title, foods}) {
   return (
     <div>
@@ -110,7 +116,8 @@ function Menu() {
         image='/fchicken1.png'
         name={"Chicken fingers"} 
         price={"RM 10.00"} 
-        ingredients={"Chicken strips dipped in batter, seasoned with salt, pepper and chilli powder. Deep-fried to perfection."}
+        foodcode={"01"}
+        ingredients={"Deep-fried battered chicken strips. Seasoned with salt, pepper and chilli powder."}
         nutritionInfo={{calories: 340, protein: 31, carbs: 35, fat: 29}}
         allergen={['/allergen2.png', '/allergen3.png']} 
         />,
@@ -119,6 +126,7 @@ function Menu() {
         image='/fchicken2.png'
         name={"6 piece nugget"} 
         price={"RM 6.00"} 
+        foodcode={"02"}
         ingredients={"Deep-fried minced chicken meat seasoned with salt and pepper. Served with mayonnaise."}
         nutritionInfo={{calories: 270, protein: 13, carbs: 16, fat: 16}}
         allergen={['/allergen2.png']}
@@ -128,7 +136,8 @@ function Menu() {
         image='/fchicken3.png'
         name={"5 piece chicken"} 
         price={"RM 12.00"} 
-        ingredients={"Chicken pieces dipped in batter, seasoned with cajun spices. Deep-fried to perfection and served with ketchup."}
+        foodcode={"03"}
+        ingredients={"Deep-fried battered chicken pieces seasoned with cajun spices. Served with ketchup."}
         nutritionInfo={{calories: 570, protein: 33, carbs: 16, fat: 16}}
         allergen={['/allergen2.png', '/allergen3.png']}
         />
@@ -141,6 +150,7 @@ function Menu() {
         image='/pizza1.png'
         name={"Pepperoni pizza"} 
         price={"RM 25.00"} 
+        foodcode={"04"}
         ingredients={"Beef pepperoni, olives, tomato puree, tomatoes, bell peppers, mozarella cheese."}
         nutritionInfo={{calories: 450, protein: 5, carbs: 35, fat: 46}}
         allergen={['/allergen2.png', '/allergen3.png']}
@@ -150,6 +160,7 @@ function Menu() {
         image='/pizza2.png'
         name={"Margherita pizza"} 
         price={"RM 25.00"} 
+        foodcode={"05"}
         ingredients={"Tomatoes, basil leaves, tomato puree, pesto sauce, mozarella cheese"}
         nutritionInfo={{calories: 470, protein: 5, carbs: 36, fat: 46}}
         allergen={['/allergen2.png', '/allergen3.png']}
@@ -159,6 +170,7 @@ function Menu() {
         image='/pizza3.png'
         name={"Seafood pizza"} 
         price={"RM 25.00"} 
+        foodcode={"06"}
         ingredients={"Pineaple chunks, marinara sauce, squid, tuna, prawns, tomatoes"}
         nutritionInfo={{calories: 570, protein: 9, carbs: 36, fat: 46}}
         allergen={['/allergen1.png', '/allergen2.png', '/allergen3.png']}
@@ -172,6 +184,7 @@ function Menu() {
         image='/drinks1.png'
         name={"Protein shake"} 
         price={"RM 8.00"} 
+        foodcode={"07"}
         ingredients={"Coconut milk blended with vanilla ice-cream and peanut butter."}
         nutritionInfo={{calories: 770, protein: 43, carbs: 36, fat: 46}}
         allergen={['/allergen.png']}
@@ -181,6 +194,7 @@ function Menu() {
         image='/drinks2.png'
         name={"Lemon and lime"} 
         price={"RM 5.00"} 
+        foodcode={"08"}
         ingredients={"Lemon and lime juice flavoured with sugar and mint"}
         nutritionInfo={{calories: 25, protein: 0, carbs: 16, fat: 0}}
         />,
@@ -189,6 +203,7 @@ function Menu() {
         image='/drinks3.png'
         name={"Iced lemon tea"} 
         price={"RM 5.00"} 
+        foodcode={"09"}
         ingredients={"Classic lemon and honey drink."}
         nutritionInfo={{calories: 25, protein: 0, carbs: 16, fat: 0}}
         />,
@@ -207,7 +222,7 @@ function App() {
     <>
     <div className="m-4 justify-content-center align-items-center">
 <main className='border-black rounded'>
-    <h2 className='text-center pt-2 pb-0 mb-0'>Welcome to Texan Hut
+    <h2 className='text-center text-warning pt-2 pb-0 mb-0'>Welcome to Texan Hut
     <img className='img-fluid m-0' src='/line2.png'></img></h2>
     <Menu />
     </main>
