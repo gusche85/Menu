@@ -48,7 +48,7 @@ function MenuItem({image, name, price, ingredients, allergen, nutritionInfo}) {
         <div className='col-md-4'><Image image={image}/></div>
         <div className='col-md-8'>
           <div className='card-body'>
-            <h5 className='card-title'><strong>{name}</strong> | {price}</h5>
+            <h5 className='card-title pt-2'><strong>{name}</strong> | {price}</h5>
             <Ingredients ingredients={ingredients} />         
             <NutritionalInfo nutritionInfo={nutritionInfo} />
             <Allergen allergen={allergen} />
@@ -63,7 +63,7 @@ function MenuItem({image, name, price, ingredients, allergen, nutritionInfo}) {
 function Category({ title, foods}) {
   return (
     <div>
-      <h2 className='text-center mb-3'>{title}</h2>
+      <h3 className='text-center mb-3'>{title}</h3>
       {foods}
     </div>
   );
@@ -81,7 +81,6 @@ function CategoryCarousel({ categories }) {
   return (
     <div className="container d-flex justify-content-center align-items-center">
     <div id='carouselExampleFade' className='carousel slide carousel-fade'>
-    
     <div className='carousel-inner'>
       {categories.map((category, index) => (
         <CategorySlide key={index} title={category.title} foods={category.foods} active={index === 0} />
@@ -95,7 +94,8 @@ function CategoryCarousel({ categories }) {
       <span className="carousel-control-next-icon" aria-hidden="true"></span>
       <span className="visually-hidden">Next</span>
     </button>
-  </div></div>
+  </div>
+  </div>
   );
 }
 
@@ -148,7 +148,7 @@ function Menu() {
 
         <MenuItem key={5} 
         image='/pizza2.png'
-        name={"Tomato basil pizza"} 
+        name={"Margherita pizza"} 
         price={"RM 25.00"} 
         ingredients={"Tomatoes, basil leaves, tomato puree, pesto sauce, mozarella cheese"}
         nutritionInfo={{calories: 470, protein: 5, carbs: 36, fat: 46}}
@@ -157,13 +157,12 @@ function Menu() {
 
         <MenuItem key={6}
         image='/pizza3.png'
-        name={"Seafood delight pizza"} 
+        name={"Seafood pizza"} 
         price={"RM 25.00"} 
         ingredients={"Pineaple chunks, marinara sauce, squid, tuna, prawns, tomatoes"}
         nutritionInfo={{calories: 570, protein: 9, carbs: 36, fat: 46}}
         allergen={['/allergen1.png', '/allergen2.png', '/allergen3.png']}
         />,
-        
       ]
     },
     {
@@ -171,7 +170,7 @@ function Menu() {
       foods: [
         <MenuItem key={7} 
         image='/drinks1.png'
-        name={"Coconut penut butter shake"} 
+        name={"Protein shake"} 
         price={"RM 8.00"} 
         ingredients={"Coconut milk blended with vanilla ice-cream and peanut butter."}
         nutritionInfo={{calories: 770, protein: 43, carbs: 36, fat: 46}}
@@ -184,7 +183,6 @@ function Menu() {
         price={"RM 5.00"} 
         ingredients={"Lemon and lime juice flavoured with sugar and mint"}
         nutritionInfo={{calories: 25, protein: 0, carbs: 16, fat: 0}}
-        
         />,
 
         <MenuItem key={9} 
@@ -193,7 +191,6 @@ function Menu() {
         price={"RM 5.00"} 
         ingredients={"Classic lemon and honey drink."}
         nutritionInfo={{calories: 25, protein: 0, carbs: 16, fat: 0}}
-  
         />,
       ]
     }
@@ -208,10 +205,10 @@ function Menu() {
 function App() {
   return (
     <>
-    <div className="m-5 justify-content-center align-items-center">
+    <div className="m-4 justify-content-center align-items-center">
 <main className='border-black rounded'>
-    <h1 className='text-center pt-3 pb-0'>Welcome to Texan Hut
-    <img className='img-fluid' src='/line.png'></img></h1>
+    <h2 className='text-center pt-2 pb-0 mb-0'>Welcome to Texan Hut
+    <img className='img-fluid m-0' src='/line2.png'></img></h2>
     <Menu />
     </main>
     </div>

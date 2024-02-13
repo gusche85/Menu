@@ -10,12 +10,13 @@ body {
     margin: 10px auto;
     position: relative;
     padding: 2em;
+    padding-top: 1em;
    color: white;
    background: hsla(20, 100%, 15%, 0.8);
    
-    width: 80%;
-    max-width: 65em;
-    font-size: 14px;
+    width: 70%;
+    max-width: 42em;
+    font-size: 13px;
   }
 
   img {
@@ -39,4 +40,6 @@ body {
   .border {
     border-color: goldenrod;
   }
- 
+
+  /* Override transition properties for the carousel control icons */
+
