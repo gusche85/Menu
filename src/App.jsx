@@ -22,9 +22,10 @@ function Allergen({allergen}) {
   return (
     <>
      <div className='fst-italic'>
-      Might contain: {allergen.map((allergens, index) => (
-                <img key={index} className='allergens' src={allergens}/>
-              ))}</div>
+      Might contain: {Array.isArray(allergen) ? 
+          allergen.map((allergens, index) => (
+            <img key={index} className='allergens' src={allergens} alt={`Allergen ${index + 1}`}/>
+          )) : 'No allergens specified'}</div>
     </>
   );
 }
@@ -48,7 +49,7 @@ function MenuItem({image, name, price, ingredients, allergen, nutritionInfo}) {
             <h5 className='card-title'><strong>{name}</strong> | {price}</h5>
             <Ingredients ingredients={ingredients} />         
             <NutritionalInfo nutritionInfo={nutritionInfo} />
-            <Allergen allergen={['/allergen1.png', '/allergen2.png', '/allergen3.png']} />
+            <Allergen allergen={allergen} />
           </div>
         </div>
       </div>
@@ -82,14 +83,18 @@ const friedChicken = (
     name={"6 piece nugget"} 
     price={"RM 6.00"} 
     ingredients={"Deep-fried minced chicken meat seasoned with salt and pepper. Served with mayonnaise."}
-    nutritionInfo={{calories: 270, protein: 13, carbs: 16, fat: 16}}/>
+    nutritionInfo={{calories: 270, protein: 13, carbs: 16, fat: 16}}
+    allergen={['/allergen2.png']}
+    />
 
     <MenuItem 
     image='/fchicken3.png'
     name={"5 piece chicken"} 
     price={"RM 12.00"} 
     ingredients={"Chicken pieces dipped in batter, seasoned with cajun spices. Deep-fried to perfection and served with ketchup."}
-    nutritionInfo={{calories: 570, protein: 33, carbs: 16, fat: 16}}/>
+    nutritionInfo={{calories: 570, protein: 33, carbs: 16, fat: 16}}
+    allergen={['/allergen2.png', '/allergen3.png']}
+    />
    </>
 );
 
