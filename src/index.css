@@ -11,7 +11,7 @@ body {
     position: relative;
     padding: 2em;
    color: white;
-   background: hsla(0, 0%, 0%, 0.783);
+   background: hsla(20, 100%, 15%, 0.8);
    
     width: 80%;
     max-width: 65em;
@@ -22,8 +22,8 @@ body {
     height: 70px;
   }
 
-  .allergen {
-    height: 20px;
+  .allergens {
+    height: 18px;
   }
 
   .fst-italic {
@@ -33,10 +33,10 @@ body {
   .card {
     max-width: 540px;
     color: white;
-    background: hsla(0, 0%, 0%, 0.783);
     backdrop-filter: blur(1rem);
   }
 
-  #menuImage {
-    height: 250px;
+  .border {
+    border-color: goldenrod;
   }
+ 
