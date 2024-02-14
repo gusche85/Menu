@@ -30,6 +30,10 @@ body {
   .fst-italic {
     font-size: 10px;
   }
+
+  .pic-allergen {
+  height: 18px;
+  }
   
   .card {
     max-width: 540px;

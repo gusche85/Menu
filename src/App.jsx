@@ -1,6 +1,8 @@
+
 import './index.css'
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './../node_modules/bootstrap/dist/js/bootstrap.min.js'
+import './../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 
 
 function NutritionalInfo({nutritionInfo}) {
@@ -31,18 +33,16 @@ function Allergen({allergen}) {
   );
 }
 
+//card pictures aka menu pictures
 function Image({image}) {
   return (
-    
      <img className='object-fit-cover img-fluid rounded-start-pill' height='90px' id='menuImage' src={image} alt='menu_image'></img>
-    
   );
 }
 
+//menu layout
 function MenuItem({image, name, price, ingredients, allergen, foodcode, nutritionInfo}) {
   return (
-    
-
      <div className='card rounded-pill mb-3 border-warning bg-transparent text-light'>
       <div className='row g-0'>
         <div className='col-md-4'><Image image={image}/></div>
@@ -66,6 +66,8 @@ function Code({foodcode}) {
     <div className='text-warning'>Code: {foodcode}</div>
   )
 }
+
+//category
 function Category({ title, foods}) {
   return (
     <div>
@@ -75,6 +77,7 @@ function Category({ title, foods}) {
   );
 }
 
+//default slide
 function CategorySlide({ title, foods, active }) {
   return (
     <div className={`carousel-item ${active ? 'active' : ''}`}>
@@ -84,22 +87,21 @@ function CategorySlide({ title, foods, active }) {
 }
 
 function CategoryCarousel({ categories }) {
+
+  const handleSlideClick = () => { //click anywhere on screen to go to next slide
+    const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleFade'));
+    carousel.next();
+  };
+
   return (
     <div className="container d-flex justify-content-center align-items-center">
-    <div id='carouselExampleFade' className='carousel slide carousel-fade'>
+    <div id='carouselExampleFade' className='carousel slide carousel-fade' onClick={handleSlideClick}>
     <div className='carousel-inner'>
       {categories.map((category, index) => (
         <CategorySlide key={index} title={category.title} foods={category.foods} active={index === 0} />
       ))}
     </div>
-    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span className="visually-hidden">Previous</span>
-    </button>
-    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-      <span className="carousel-control-next-icon" aria-hidden="true"></span>
-      <span className="visually-hidden">Next</span>
-    </button>
+    
   </div>
   </div>
   );
@@ -216,8 +218,28 @@ function Menu() {
   );
 }
 
+function AllergenDisplay({ legend }) {
+  return (
+    <div className='fst-italic text-center'>
+      Legend: 
+      {legend.map((allergen, index) => (
+        <div key={index} className='list-inline-item align-items-center'>
+          <img src={allergen.image} className='pic-allergen'/>
+          <span>{allergen.description}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function App() {
+  const allergenLegend = [
+    { image: '/allergen.png', description: 'peanuts' },
+    { image: '/allergen1.png', description: 'crustaceans' },
+    { image: '/allergen2.png', description: 'egg' },
+    { image: '/allergen3.png', description: 'wheat' },
+  ];
+
   return (
     <>
     <div className="m-4 justify-content-center align-items-center">
@@ -225,6 +247,7 @@ function App() {
     <h2 className='text-center text-warning pt-2 pb-0 mb-0'>Welcome to Texan Hut
     <img className='img-fluid m-0' src='/line2.png'></img></h2>
     <Menu />
+    <AllergenDisplay legend={allergenLegend} />
     </main>
     </div>
     </>
