@@ -36,17 +36,18 @@ function Allergen({allergen}) {
 //card pictures aka menu pictures
 function Image({image}) {
   return (
-     <img className='object-fit-cover img-fluid rounded-start-pill' height='90px' id='menuImage' src={image} alt='menu_image'></img>
+     <img className='object-fit-cover img-fluid rounded-start-pill rounded-pill-top' height='90px' id='menuImage' src={image} alt='menu_image'></img>
   );
 }
 
 //menu layout
 function MenuItem({image, name, price, ingredients, allergen, foodcode, nutritionInfo}) {
   return (
-     <div className='card rounded-pill mb-3 border-warning bg-transparent text-light'>
+   
+     <div className='card rounded-pill rounded mb-3 border-warning bg-transparent text-light'>
       <div className='row g-0'>
-        <div className='col-md-4'><Image image={image}/></div>
-        <div className='col-md-8'>
+        <div className='col-sm-4 col-md-4'><Image image={image}/></div>
+        <div className='col-sm-8 col-md-8'>
           <div className='card-body'>
             <h5 className='card-title pt-1'><strong>{name}</strong> | {price}</h5>
             <Code foodcode={foodcode} />
@@ -197,7 +198,7 @@ function Menu() {
         name={"Lemon and lime"} 
         price={"RM 5.00"} 
         foodcode={"08"}
-        ingredients={"Lemon and lime juice flavoured with sugar and mint"}
+        ingredients={"Lemon and lime juice flavoured with sugar and mint. Served cold."}
         nutritionInfo={{calories: 25, protein: 0, carbs: 16, fat: 0}}
         />,
 
@@ -206,7 +207,7 @@ function Menu() {
         name={"Iced lemon tea"} 
         price={"RM 5.00"} 
         foodcode={"09"}
-        ingredients={"Classic lemon and honey drink."}
+        ingredients={"Classic lemon and honey drink. Perfect on a hot day"}
         nutritionInfo={{calories: 25, protein: 0, carbs: 16, fat: 0}}
         />,
       ]

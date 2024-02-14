@@ -45,5 +45,54 @@ body {
     border-color: goldenrod;
   }
 
-  /* Override transition properties for the carousel control icons */
+  /* small screens */
+  @media (max-width: 820px) {
+    
+    main {
+      margin: 10px auto;
+      position: relative;
+      padding: 2em;
+      width: 90%;
+      max-width: 47em;
+      font-size: 14px;
+    }
+    .card {
+      max-width: 640px;
+    }
+  }
 
+  @media (max-width: 1024px) {
+    
+    main {
+      margin: 10px auto;
+      position: relative;
+      padding: 2em;
+      width: 90%;
+      max-width: 51em;
+      font-size: 14px;
+    }
+    .card {
+      max-width: 640px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .rounded-pill-top {
+      border-top-left-radius: 50rem; 
+      border-top-right-radius: 50rem; 
+      border-bottom-left-radius: 0; 
+      border-bottom-right-radius: 50rem; 
+      width: 110px;
+      max-height: 110px;
+      
+    }
+  
+    
+    
+
+    main {
+      padding: 1em;
+      text-align: center;
+      
+    }
+  }
